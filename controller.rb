@@ -1,5 +1,5 @@
 require('sinatra')
-require('sinatra/contrib/all') if development ?
+# require('sinatra/contrib/all') if development ?
 # require('pry') for development purposes only
 require_relative('models/hireOrder')
 require_relative('models/customer')
