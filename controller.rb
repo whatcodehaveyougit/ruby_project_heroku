@@ -1,10 +1,10 @@
 require('sinatra')
-require('sinatra/contrib/all')
+require('sinatra/contrib/all') if development ?
 # require('pry') for development purposes only
 require_relative('models/hireOrder')
 require_relative('models/customer')
 require_relative('models/hireItem')
-also_reload('./models/*')  
+# also_reload('./models/*')
 
 get '/?' do
   erb(:index)

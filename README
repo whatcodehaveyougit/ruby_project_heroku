@@ -13,6 +13,6 @@ gem install sinatra
 gem install pry
 gem install pg
 
-Run gem update if having problems
+Run gem update if having problems!
 
 The database we use is postgres -
