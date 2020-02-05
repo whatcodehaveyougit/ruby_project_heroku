@@ -1,0 +1,32 @@
+  <div class="banner">
+    <nav>
+      <ul class = "secondary-nav">
+        <li><a href="/hire-stock/new">Add Item for Hire</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="hire-item-table-headings">
+    <h3 class="order-heading">Name</h3>
+    <h3 class="order-heading">Item</h3>
+    <h3 class="order-heading">Day Price</h3>
+  </div>
+<div id="hire-stock" class="">
+
+  <% @hireStock.each do |hireItem| %>
+    <div class="hire-item hire-item-row">
+      <div class="capitalize name"><%= hireItem.name %><br>
+        <a href="/hire-stock/<%= hireItem.id %>/edit"><button class="edit-button" type="button">Edit</button></a>
+        <form method="POST" action="/hire-stock/<%= hireItem.id %>/delete">
+           <input class="delete-button" type="submit" value="Delete Item"/>
+        </form>
+      </div>
+      <p>£ <%= hireItem.price %></p>
+      <p><a href="/hire-stock/<%= hireItem.id %>">More Info</a></p>
+
+
+    </div>  <!-- Hire-item -->
+
+  <% end %>
+
+</div>

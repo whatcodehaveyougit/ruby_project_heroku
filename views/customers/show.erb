@@ -1,0 +1,16 @@
+
+<div class="customer-page">
+
+  <h1 class="capitalize name"><%= @customer.name %></h1>
+  <p class="capitalize"><%= @customer.address %></p>
+  <p><%= @customer.phone %></p>
+
+  <hr>
+  <h2>Hired Items</h2>
+  <% @customer.hired.each do |item| %>
+  <hr>
+    <p><%= item.name.capitalize %></p>
+    <p>£ <%= item.price %></p>
+  <% end %>
+
+</div>

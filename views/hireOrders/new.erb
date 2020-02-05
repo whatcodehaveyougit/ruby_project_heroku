@@ -1,0 +1,89 @@
+<h2 style="text-align: center;">New Order</h2>
+<div class="new-order-page-container">
+
+  <div class="form-page-wrap">
+
+    <h2>Add Customer</h2>
+
+    <form method="POST" action="/hire-orders/save-customer">
+      <div class="form-wrapper">
+
+        <div class="form-element">
+          <label for="name">Name:</label>
+          <input type="text" name="name" id="first_name"/>
+        </div>
+
+        <div class="form-element">
+          <label for="address">Address</label>
+          <input type="text" name="address" id="address">
+        </div>
+
+
+        <div class="form-element">
+          <label for="phone">Phone</label>
+          <input type="number" name="phone" id="phone"/>
+        </div>
+
+        <div class="form-element">
+          <input type="submit" value="Submit"/>
+        </div>
+
+      </div>
+    </form>
+  </div>
+
+
+  <div class="form-page-wrap">
+
+  <h2>Add Item for Hire</h2>
+
+  <form method="POST" action="/hire-orders">
+    <div class="form-wrapper">
+
+      <div class="form-element">
+        <label for="start_date">Start Date</label>
+        <input type="date" name="start_date" id="start_date"/>
+      </div>
+
+      <div class="form-element">
+        <label for="end_date">End Date</label>
+        <input type="date" name="end_date" id="end_date">
+      </div>
+
+  <div class="form-element">
+     <label for="customer_id">Select Customer:</label>
+     <select name="customer_id" id="customer_id">
+       <% @customers.each do |customer| %>
+           <option value=<%= customer.id %>><%= customer.name %></option>
+       <% end %>
+     </select>
+   </div>
+
+   <div class="form-element">
+      <label for="hire_item_id">Select Hire Item</label>
+      <select name="hire_item_id" id="hire_item_id">
+        <% @hireStock.each do |hireItem| %>
+            <option value=<%= hireItem.id %>><%= hireItem.name %></option>
+        <% end %>
+      </select>
+    </div>
+
+      <div class="form-element">
+        <label for="phone">Phone</label>
+        <input type="number" name="phone" id="phone"/>
+      </div>
+
+      <div class="form-element">
+        <label for="phone">Notes</label>
+        <input type="text" name="notes" id="notes"/>
+      </div>
+
+      <div class="form-element">
+        <input type="submit" value="Submit"/>
+      </div>
+
+    </div>
+  </form>
+</div>
+
+</div>
